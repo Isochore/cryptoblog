@@ -3,6 +3,7 @@ import ArticleTitlePreview from '../atoms/ArticleTitlePreview';
 import ArticleImagePreview from '../atoms/ArticleImagePreview';
 import ArticleDescriptionPreview from '../atoms/ArticleDescriptionPreview';
 import ArticlePublicationDatePreview from '../atoms/ArticlePublicationDatePreview';
+import { Link } from 'react-router-dom';
 
 
 const ArticlePreview: NextPage = () => {
@@ -15,6 +16,7 @@ const ArticlePreview: NextPage = () => {
                 <ArticleDescriptionPreview />
                 <ArticlePublicationDatePreview />
             </div>
+            <Link to="/detail">Consulter</Link>
         </div>
         <style jsx>{`
             .article-preview-container {
@@ -37,11 +39,7 @@ const ArticlePreview: NextPage = () => {
             .content-wrapper {
                 display: flex;
                 flex-direction: column;
-                width: 100%;
-            }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
+                width: 400px;
             }
     `   }</style>
     </div>

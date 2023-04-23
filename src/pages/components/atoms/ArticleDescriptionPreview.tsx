@@ -7,6 +7,7 @@ const ArticleDescriptionPreview: NextPage = () => {
         <style jsx>{`
             p {
                 margin-bottom: 20px;
+                text-align: justify;
             }
             .description {
                 font-size: 1.5rem;
