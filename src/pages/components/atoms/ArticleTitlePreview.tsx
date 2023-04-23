@@ -6,10 +6,8 @@ const ArticleTitlePreview: NextPage = () => {
     <div>
         <h2>Titre</h2>
         <style jsx>{`
-            .title {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #333;
+            h2 {
+                margin-bottom: 20px;
             }
             .description {
                 font-size: 1.5rem;

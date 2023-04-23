@@ -1,7 +1,7 @@
 import type { NextPage } from "next";
 import ArticlePreview from '../organisms/HomePage';
 import ArticleDetail from '../organisms/ArticleDetail';
-import { BrowserRouter, Route, Routes, BrowserRouter as Router, withRouter } from 'react-router-dom';
+import { BrowserRouter, Route, Routes, BrowserRouter as Router } from 'react-router-dom';
 import HomePage from "../organisms/HomePage";
 
 
@@ -17,11 +17,11 @@ const Body: NextPage = () => {
         </Router>
         <style jsx>{`
             .container {
-                background-color: white;
+                background-color: #f9f9f9;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
-                height: 100vh;
+                height: 100%;
                 width: 100%;
                 color: black;
             }

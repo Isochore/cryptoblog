@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 const ArticleImagePreview: NextPage = () => {
     return (
     <div>
-        <img src="https://fastly.picsum.photos/id/408/400/300.jpg?hmac=4A4pKDOd3yTl8S9tU6Xl-CqDAMFAF3aRzYFqfPzXuNo">Titre</img>
+        <img src="https://fastly.picsum.photos/id/408/400/300.jpg?hmac=4A4pKDOd3yTl8S9tU6Xl-CqDAMFAF3aRzYFqfPzXuNo" alt="photo"/>
         <style jsx>{`
             .title {
                 font-size: 2rem;

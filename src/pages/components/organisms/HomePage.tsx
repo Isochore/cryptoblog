@@ -8,13 +8,17 @@ const HomePage: NextPage = () => {
     return (
     <div>
         <BlogHeader />
-        <ArticlePreview />
+        <div className="article-preview-container">
+            <ArticlePreview />
+            <ArticlePreview />
+            <ArticlePreview />
+            <ArticlePreview />
+        </div>
         <Link to="/detail">Go to detail page</Link>
         <style jsx>{`
-            .title {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #333;
+            .article-preview-container {
+                display: flex;
+                flex-wrap: wrap;
             }
             .description {
                 font-size: 1.5rem;
