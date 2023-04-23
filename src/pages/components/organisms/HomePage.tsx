@@ -1,13 +1,15 @@
 import type { NextPage } from "next";
-import ArticleTitlePreview from '../atoms/ArticleTitlePreview';
-import ArticleImagePreview from '../atoms/ArticleImagePreview';
+import ArticlePreview from '../molecules/ArticlePreview';
+import BlogHeader from '../atoms/BlogHeader';
+import { Link } from 'react-router-dom';
 
 
-const ArticlePreview: NextPage = () => {
+const HomePage: NextPage = () => {
     return (
     <div>
-        <ArticleTitlePreview />
-        {/* <ArticleImagePreview /> */}
+        <BlogHeader />
+        <ArticlePreview />
+        <Link to="/detail">Go to detail page</Link>
         <style jsx>{`
             .title {
                 font-size: 2rem;
@@ -23,4 +25,4 @@ const ArticlePreview: NextPage = () => {
     );
 };
 
-export default ArticlePreview;
+export default HomePage;

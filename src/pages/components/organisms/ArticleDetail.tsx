@@ -3,11 +3,10 @@ import ArticleTitlePreview from '../atoms/ArticleTitlePreview';
 import ArticleImagePreview from '../atoms/ArticleImagePreview';
 
 
-const ArticlePreview: NextPage = () => {
+const ArticleDetail: NextPage = () => {
     return (
     <div>
-        <ArticleTitlePreview />
-        {/* <ArticleImagePreview /> */}
+        <p>Detail</p>
         <style jsx>{`
             .title {
                 font-size: 2rem;
@@ -23,4 +22,4 @@ const ArticlePreview: NextPage = () => {
     );
 };
 
-export default ArticlePreview;
+export default ArticleDetail;

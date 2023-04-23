@@ -1,14 +1,20 @@
 import type { NextPage } from "next";
-import ArticlePreview from '../molecules/ArticlePreview';
-import BlogHeader from '../atoms/BlogHeader';
-// import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import ArticlePreview from '../organisms/HomePage';
+import ArticleDetail from '../organisms/ArticleDetail';
+import { BrowserRouter, Route, Routes, BrowserRouter as Router, withRouter } from 'react-router-dom';
+import HomePage from "../organisms/HomePage";
 
 
 const Body: NextPage = () => {
     return (
     <div className="container">
-        <BlogHeader />
-        <ArticlePreview />
+        <Router>
+            <Routes>
+                <Route path="/" element={<HomePage/>}/>
+                <Route path="/detail" element={<ArticleDetail/>}/>
+                {/* <Route path="*" element={<NotFound/>}/> */}
+            </Routes>
+        </Router>
         <style jsx>{`
             .container {
                 background-color: white;
