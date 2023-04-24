@@ -7,14 +7,10 @@ interface ArticleImagePreviewProps {
 const ArticleImagePreview: React.FC<ArticleImagePreviewProps> = (props: ArticleImagePreviewProps) => {
     return (
     <div>
-        <img src={props.image} alt="photo"/>
+        <img src={props.image} alt="illustrative image for the article"/>
         <style jsx>{`
             img {
                 width: 400px;
-            }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
             }
     `   }</style>
     </div>

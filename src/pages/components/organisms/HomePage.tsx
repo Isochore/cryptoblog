@@ -23,15 +23,12 @@ const HomePage: NextPage = () => {
         })
         .then(res => res.json())
         .then(response => {
-            console.log("ololo", response)
+            console.log("api response", response)
             dispatch(setArticlesState(response));
         }).catch(function(error) {
             console.log(error.message);
         });
     }, [dispatch]);
-    if (typeof articles.articles !== "undefined") {
-        console.log("wow", articles.articles[0].title);
-    }
 
 
     return (
@@ -47,20 +44,12 @@ const HomePage: NextPage = () => {
                     date={article.publishedAt}
                 />
             )): "No articles"}
-            {/* <ArticlePreview />
-            <ArticlePreview />
-            <ArticlePreview />
-            <ArticlePreview /> */}
         </div>
-        <Link to="/detail">Go to detail page</Link>
         <style jsx>{`
             .article-preview-container {
                 display: flex;
                 flex-wrap: wrap;
-            }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
+                justify-content: center;
             }
     `   }</style>
     </div>

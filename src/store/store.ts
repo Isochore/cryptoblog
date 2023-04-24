@@ -1,15 +1,13 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit";
-import { authSlice } from "./authSlice";
 import { articlesSlice } from "./articlesSlice";
 import { createWrapper } from "next-redux-wrapper";
 import { persistReducer, persistStore } from "redux-persist";
 import { combineReducers } from 'redux';
 import storage from "redux-persist/lib/storage";
-import articlesReducer, { fetchArticles } from './articlesSlice';
+import articlesReducer from './articlesSlice';
 
 
 const rootReducer = combineReducers({
-    [authSlice.name]: authSlice.reducer,
     [articlesSlice.name]: articlesSlice.reducer,
   });
   
@@ -40,14 +38,6 @@ const rootReducer = combineReducers({
         return store;
     }
   };
-
-// const makeStore = () =>
-//   configureStore({
-//     reducer: {
-//       [authSlice.name]: authSlice.reducer,
-//     },
-//     devTools: true,
-//   });
 
 export type AppStore = ReturnType<typeof makeStore>;
 export type AppState = ReturnType<AppStore["getState"]>;

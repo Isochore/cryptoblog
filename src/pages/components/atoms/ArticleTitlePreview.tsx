@@ -14,10 +14,6 @@ const ArticleTitlePreview: React.FC<ArticleTitlePreviewProps> = (props: ArticleT
                 margin-bottom: 20px;
                 width: 400px;
             }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
-            }
     `   }</style>
     </div>
     );

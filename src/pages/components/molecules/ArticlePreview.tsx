@@ -24,13 +24,15 @@ const ArticlePreview: React.FC<ArticlePreviewProps>  = (props: ArticlePreviewPro
                 <ArticleDescriptionPreview description={props.description} />
                 <ArticlePublicationDatePreview date={props.date} />
             </div>
-            <Link to="/detail">Consulter</Link>
         </div>
+            <Link to="/detail">Consulter l'article</Link>
         <style jsx>{`
             .article-preview-container {
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                justify-content: space-between;
+                max-width: 500px;
                 flex: 40%;
                 background-color: #fff;
                 border-radius: 1rem;

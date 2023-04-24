@@ -15,11 +15,7 @@ const ArticlePublicationDatePreview: React.FC<ArticlePublicationDatePreviewProps
     <div>
         <p>{formatDate(props.date)}</p>
         <style jsx>{`
-            .title {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #333;
-            }
+
     `   }</style>
     </div>
     );

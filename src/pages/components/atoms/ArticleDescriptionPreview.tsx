@@ -13,10 +13,6 @@ const ArticleDescriptionPreview: React.FC<ArticleDescriptionPreviewProps> = (pro
                 margin-bottom: 20px;
                 text-align: justify;
             }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
-            }
     `   }</style>
     </div>
     );

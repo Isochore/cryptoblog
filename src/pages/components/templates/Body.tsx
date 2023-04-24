@@ -25,10 +25,6 @@ const Body: NextPage = () => {
                 width: 100%;
                 color: black;
             }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
-            }
     `   }</style>
     </div>
     );
