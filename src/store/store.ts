@@ -23,21 +23,22 @@ const rootReducer = combineReducers({
     if (isServer) {
       return makeConfiguredStore();
     } else {
-      // we need it only on client side
-      const persistConfig = {
-        key: "nextjs",
-        whitelist: ["auth"], // make sure it does not clash with server keys
-        storage,
-      };
-      const persistedReducer = persistReducer(persistConfig, rootReducer);
-      let store: any = configureStore({
-        reducer: persistedReducer,
-        devTools: process.env.NODE_ENV !== "production",
-      });
-      store.__persistor = persistStore(store); // Nasty hack
-      store.dispatch(fetchArticles());
-      
-      return store;
+        // we need it only on client side
+        const persistConfig = {
+            key: "nextjs",
+            whitelist: ["auth"], // make sure it does not clash with server keys
+            storage,
+        };
+        const persistedReducer = persistReducer(persistConfig, rootReducer);
+        let store: any = configureStore({
+            reducer: persistedReducer,
+            devTools: process.env.NODE_ENV !== "production",
+        });
+        store.__persistor = persistStore(store); // Nasty hack
+
+        store.dispatch(fetchArticles());
+        
+        return store;
     }
   };
 
