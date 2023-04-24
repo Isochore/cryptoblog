@@ -3,7 +3,7 @@ import type { NextPage } from "next";
 const BlogHeader: NextPage = () => {
     return (
     <div className="header-container">
-        <h1>Mon blog</h1>
+        <h1>Cryptoblog</h1>
         <style jsx>{`
             .header-container {
                 display: flex;

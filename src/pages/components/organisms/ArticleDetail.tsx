@@ -8,14 +8,8 @@ const ArticleDetail: NextPage = () => {
     <div>
         <p>Detail</p>
         <style jsx>{`
-            .title {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #333;
-            }
-            .description {
-                font-size: 1.5rem;
-                color: #666;
+            div {
+                height: 100vh;
             }
     `   }</style>
     </div>

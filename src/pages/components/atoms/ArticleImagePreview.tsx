@@ -1,14 +1,16 @@
 import type { NextPage } from "next";
 
-const ArticleImagePreview: NextPage = () => {
+interface ArticleImagePreviewProps {
+    image: string
+}
+
+const ArticleImagePreview: React.FC<ArticleImagePreviewProps> = (props: ArticleImagePreviewProps) => {
     return (
     <div>
-        <img src="https://fastly.picsum.photos/id/408/400/300.jpg?hmac=4A4pKDOd3yTl8S9tU6Xl-CqDAMFAF3aRzYFqfPzXuNo" alt="photo"/>
+        <img src={props.image} alt="photo"/>
         <style jsx>{`
-            .title {
-                font-size: 2rem;
-                font-weight: bold;
-                color: #333;
+            img {
+                width: 400px;
             }
             .description {
                 font-size: 1.5rem;

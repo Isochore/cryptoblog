@@ -5,16 +5,24 @@ import ArticleDescriptionPreview from '../atoms/ArticleDescriptionPreview';
 import ArticlePublicationDatePreview from '../atoms/ArticlePublicationDatePreview';
 import { Link } from 'react-router-dom';
 
+interface ArticlePreviewProps {
+    key: number,
+    title: string,
+    image: string,
+    description: string,
+    date: string
+}
 
-const ArticlePreview: NextPage = () => {
+
+const ArticlePreview: React.FC<ArticlePreviewProps>  = (props: ArticlePreviewProps) => {
     return (
     <div className="article-preview-container">
         <div className="article-preview-wrapper">
-            <ArticleTitlePreview />
-            <ArticleImagePreview />
+            <ArticleTitlePreview title={props.title} />
+            <ArticleImagePreview image={props.image} />
             <div className="content-wrapper">
-                <ArticleDescriptionPreview />
-                <ArticlePublicationDatePreview />
+                <ArticleDescriptionPreview description={props.description} />
+                <ArticlePublicationDatePreview date={props.date} />
             </div>
             <Link to="/detail">Consulter</Link>
         </div>

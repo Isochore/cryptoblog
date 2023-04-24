@@ -3,52 +3,54 @@ import ArticlePreview from '../molecules/ArticlePreview';
 import BlogHeader from '../atoms/BlogHeader';
 import { Link } from 'react-router-dom';
 import { useEffect } from "react";
-import { selectArticlesState, setArticlesState, fetchArticles } from "../../../store/articlesSlice";
+import { selectArticlesState, setArticlesState } from "../../../store/articlesSlice";
 import { useDispatch, useSelector } from "react-redux";
 import {ThunkDispatch} from "@reduxjs/toolkit";
-// import { RootState } from "@/store/store";
-
-
-// const dispatch = useDispatch();
-// const articleListReducer = useSelector((state:RootState) => state.articleList);
-
-// console.log("😂", articleListReducer);
-
 
 const HomePage: NextPage = () => {
-    // const articlesState = useSelector(selectArticlesState);
     const articles = useSelector(selectArticlesState);
     const dispatch = useDispatch<ThunkDispatch<any, any, any>>();
     
     useEffect(() => {
-        // let headers = new Headers();
+        let headers = new Headers();
 
-        // headers.set('Authorization', 'Bearer ');
+        headers.set('Authorization', 'Bearer ');
     
-        // fetch(`https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&pageSize=10&apiKey=968eb88304e84a5eab0b2f367f95b5cf`, {
+        fetch(`https://newsapi.org/v2/everything?q=bitcoin&sortBy=relevance&pageSize=10&language=fr&apiKey=a034200d5ee34317b8a53c6819ee96be`, {
     
-        // method: 'GET',
-        // headers: headers,
-        // })
-        // .then(res => res.json())
-        // .then(response => {
-        //     console.log("ololo", response)
-        //     dispatch(setArticlesState(response));
-        // }).catch(function(error) {
-        //     console.log(error.message);
-        // });
+        method: 'GET',
+        headers: headers,
+        })
+        .then(res => res.json())
+        .then(response => {
+            console.log("ololo", response)
+            dispatch(setArticlesState(response));
+        }).catch(function(error) {
+            console.log(error.message);
+        });
     }, [dispatch]);
-    console.log("wow", articles);
+    if (typeof articles.articles !== "undefined") {
+        console.log("wow", articles.articles[0].title);
+    }
 
 
     return (
     <div>
         <BlogHeader />
         <div className="article-preview-container">
+            {typeof articles.articles !== "undefined" ? articles.articles.map((article:any, index:number) => (
+                <ArticlePreview
+                    key={index}
+                    title={article.title}
+                    image={article.urlToImage}
+                    description={article.description}
+                    date={article.publishedAt}
+                />
+            )): "No articles"}
+            {/* <ArticlePreview />
             <ArticlePreview />
             <ArticlePreview />
-            <ArticlePreview />
-            <ArticlePreview />
+            <ArticlePreview /> */}
         </div>
         <Link to="/detail">Go to detail page</Link>
         <style jsx>{`

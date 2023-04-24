@@ -2,36 +2,16 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { AppState } from "./store";
 import { HYDRATE } from "next-redux-wrapper";
 
-export const fetchArticles = createAsyncThunk(
-    'articles/fetch',
-    async () => {
-      const response = await fetch('https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&pageSize=10&apiKey=968eb88304e84a5eab0b2f367f95b5cf');
-      const data = await response.json();
-      console.log("slice", data.articles);
-    //   setArticlesState(data.articles);
-      return data.articles;
-    }
-  );
-// export const fetchArticles = () => {
-
-//     let headers = new Headers();
-
-//     headers.set('Authorization', 'Bearer ');
-
-//     fetch(`https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&pageSize=10&apiKey=968eb88304e84a5eab0b2f367f95b5cf`, {
-
-//     method: 'GET',
-//     headers: headers,
-//     })
-//     .then(res => res.json())
-//     .then(response => {
-//         console.log("ololo into slice", response)
-//         setArticlesState(response);
-//     }).catch(function(error) {
-//         console.log(error.message);
-//     });
-
-// }
+// export const fetchArticles = createAsyncThunk(
+//     'articles/fetch',
+//     async () => {
+//       const response = await fetch('https://newsapi.org/v2/everything?q=bitcoin&sortBy=publishedAt&pageSize=10&apiKey=968eb88304e84a5eab0b2f367f95b5cf');
+//       const data = await response.json();
+//       console.log("slice", data.articles);
+//     //   setArticlesState(data.articles);
+//       return data.articles;
+//     }
+//   );
 // Type for our state
 export interface ArticlesState {
   articlesState: object;

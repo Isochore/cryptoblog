@@ -1,9 +1,13 @@
 import type { NextPage } from "next";
 
-const ArticleDescriptionPreview: NextPage = () => {
+interface ArticleDescriptionPreviewProps {
+    description: string
+}
+
+const ArticleDescriptionPreview: React.FC<ArticleDescriptionPreviewProps> = (props: ArticleDescriptionPreviewProps) => {
     return (
     <div>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut gravida, odio sit amet hendrerit sollicitudin, urna mauris finibus massa, vel sollicitudin dolor augue eu sapien.</p>
+        <p>{props.description}</p>
         <style jsx>{`
             p {
                 margin-bottom: 20px;

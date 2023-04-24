@@ -7,6 +7,7 @@ import { combineReducers } from 'redux';
 import storage from "redux-persist/lib/storage";
 import articlesReducer, { fetchArticles } from './articlesSlice';
 
+
 const rootReducer = combineReducers({
     [authSlice.name]: authSlice.reducer,
     [articlesSlice.name]: articlesSlice.reducer,
@@ -36,8 +37,6 @@ const rootReducer = combineReducers({
         });
         store.__persistor = persistStore(store); // Nasty hack
 
-        store.dispatch(fetchArticles());
-        
         return store;
     }
   };
